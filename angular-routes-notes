@@ -1,0 +1,34 @@
+ANGULAR ROUTES
+--------------
+
+Allow us to mock out the routing stuff we did on the server side; the difference is that we don't have actual routes
+
+Hash Routes
+The routing happens in the client
+#/something
+
+Tyler has merged to master everything up to today, including the insanity of the directives and things e added yesterday (including re-organization of the project directory structure)
+
+$ bower install --save angular-route
+
+Our first global dependency injection into notesApp
+
+Now angular-route will be required in client.js
+
+Cannot define routes until the end of the file, because everything else needs to load first.
+notesApp.config is the thing that needs to be at the end
+
+notesApp.config([$routeProvider, function($routeProvider) {
+  stuff..........
+}]);
+
+I did not build out the rest of this anywhere, but it is some cool stuff.
+Probably will want to watch the video to see the process.
+
+13:49 - pay homage to the mongod
+
+localhost:3000/#/notes is how this comes out
+
+Angular handles the routing to the right of the #
+
+BREAK @ 14:00

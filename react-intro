@@ -1,0 +1,79 @@
+REACT, DAY 1
+------------
+
+Look at the macro-organization of open-source projects to get sensibility of how things are (or can be) organized. There's more than one way to do it. We've just been seeing Tyler's workflow.
+
+Look at Ghost, too.
+
+NGBook
+
++++++
+
+But first... a detour into Angular routes (see the other notes doc)
+
++++++
+
+Get into the ha
+
+Tyler a new branch (react_intro) that got rid of everything related to the client side, except Karma.
+
+$ npm init
+$ bower init
+$ npm install --save-dev reactify
+
+Need to add reactify to our Gruntfile
+
+Note that reactify needs to go before bowerify:
+
+options: {
+  transform: ['reactify', 'debowerify']
+}
+
+Our directory structure will be much simpler.
+
+We'll only need to deal with global-level and resource-level componenents, not as much stuff as we did with Angular.
+
+$ mkdir -p app/js
+
+$ subl app/index.html (at this point, only the bundle needs to go in here)
+
+app/js/client.js will have all of our client-side code
+
+$ bower install --save react
+
+React is basically just a view library
+
+"It allows us to work in a way that kinda makes sense." - Tyler, 14:50
+
+React operates at 60 fps, or a refresh at every 16.6 ms
+
+React operates a lot closer to functional programming than to OOP
+
+It appears like data binding, but it isn't.
+
+The actual DOM is the slow part. Even though the shadow DOM is constantly being re-drawn, the actual DOM is only redrawn as needed.
+
+We'll be using Flux. It's not a library or a tool; it's a design process that utilizes these one-way data bindings.
+
++++++
+
+Starting to build the client.js now (14:55 or so)
+
+Keep an eye out for syntax highlighting plugins for Sublime
+
++++++
+
+Where we can store data:
+
+Props: 100% unchangeable (immutable)
+State: can be modified, but not in place
+
++++++
+
+15:30 Tyler borked his setup
+
+Note: do not put semicolons at the end of the render functions, since they're already inside an object
+
+Make sure all of your jsx components have a /> at the end
+
+Each return in JSX can only contain one element. Note how the headline for the list goes into a separate element.
