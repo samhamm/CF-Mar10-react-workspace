@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var mongoose = require('mongoose');
-var caplogsRoutes = require('./routes/notes-routes');
+var notesRoutes = require('./routes/notes-routes');
 
 mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/db-react-intro');
 
