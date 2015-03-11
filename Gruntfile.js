@@ -39,7 +39,11 @@ module.exports = function(grunt) {
         dest: 'test/karma_tests/karma_test_bundle.js'
       },
       options: {
+<<<<<<< HEAD
         transform: ['reactify','debowerify']
+=======
+        transform: ['debowerify']
+>>>>>>> a144b79c927ea435ef7aa738b3b1034068694843
       }
     },
 
